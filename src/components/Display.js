@@ -2,9 +2,10 @@ import React, { Component } from 'react';
  
 class Display extends Component {
     render() { 
+        const string = this.props.data.join('');
         return (
-            <div>
-                Display
+            <div className="Display">
+              {string}
             </div>
         );
     }
