@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import math from 'mathjs';
+import update from 'immutability-helper';
 import Display from './Display';
 import Buttons from './Buttons';
 import Button from './Button';
@@ -8,6 +10,14 @@ class Calculator extends Component {
         super(props)
         this.state={
             operations:[],
+        }
+    }
+    // calculations
+    calculateOperations = () =>{
+        let result = this.state.operations.join('');
+        if(result){
+           result = math.eval(result);
+           
         }
     }
     // handleClick function
